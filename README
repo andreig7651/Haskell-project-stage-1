@@ -1,0 +1,83 @@
+#Gavriliu Andrei-Mihai 323CB
+
+Pentru a fi mai usor de inteles proiectul am descris pe pasi modul de implementare gandit de mine,dar pe care ,apoi l-am transformat
+intr-o functie oneliner.
+
+Task 1
+    -pentru a afla media pe intervalul orar,primim un input pe care trebuie sa il prelucram;
+    -eliminam primul rand din tabela,deoarece nu avem nevoie de el;
+    -folosim map head pe noul input pentru a construi o lista cu numele persoanelor;
+    -folosim map tail pe noul input pentru a afla o lista de liste cu numarul de pasi pentru fiecare persoana;
+    -convertim aceasta lista de la String la Int tot cu map;
+    -aplicam functia operation pe fiecare lista din lista de liste de Int;
+    -functia operation primeste ca argument o lista de intregi si intoarce un String,dar sub forma de float;
+    -astfel calculam media de pasi pentru fiecare persoana;
+    -in final,concatenam lista cu numele persoanelor cu lista mediei de pasi si obtinem raspunsul dorit;
+    -folosim functia oneList ce concateneaza 2 liste corespunzator;
+
+Task 2
+
+    get_passed_people_num:
+        -eliminam primul rand din input;
+        -eliminam prima coloana din input,pentru a ramane doar cu valorile numerice;
+        -convertim valorile numerice din string in int;
+        -facem suma pasilor pentru fiecare persoana;
+        -folosim functia goals ce foloseste functia filter si filtram din lista doar persoanele care au depasit 1000 pasi;
+        -aflam lungimea listei nou formate,pe care o intoarcem;
+
+    get_passed_people_percentage:
+        -ne folosim de functia anterioara;
+        -impartim numarul de oameni care si-au atins obiectivul,la numarul total de oameni;
+
+    get_steps_avg:
+        -eliminam primul rand din input;
+        -aplicam map tail pe fiecare rand pentru a obtine valorile numeirce,apoi le convertim in Int;
+        -calculam suma pasilor pentru fiecare persoana cu un map si un foldr;
+        -aplicam foldr pentru a afla suma tuturor pasilor a tuturor persoanelor;
+
+Task 3
+    -extragem valorile numerice din input folosind functia get_num;
+    -aflam media pentru fiecare ora folosind functia get_sum;
+    -functia get_sum foloseste zipWith pentru a calcula suma pe coloane;
+    -astfel dintr-o lista de liste,vom obtine doar o lista suma;
+    -apoi,este convertita lista suma de la Int la Float si calculata media pentru fiecre ora;
+    -convertim lista de medii la string(cu 2 zecimale) si intoarcem rezultatul;
+
+Task 4
+    -aplicam functia get3 ce va prelucra inputul; 
+    -get3 elimina primul rand din input,apoi primele 3 coloane,deoarece nu ne folosesc in rezolvare;
+    -avem nevoie doar de valorile numerice pe care le convertim de la String la Int;
+    -get 3 intoarce 3 liste in care vom avea valorile din prima,a doua,respectiv a treia coloana;
+    -in funcita count_workout aplicam cele 3 functii de range pe fiecare lista intoarsa de get3 pentru a afla numarul de persoane ce au respectat
+     programul respectiv in categoria respectiva;
+    -construim 3 noi liste cu titlurile "VeryActiveMinutes","FairlyActiveMinutes","LightlyActiveMinutes" si datele obtinute anterior;
+    -intoarcem rezultatul final;
+    -printString2 face conversia de la Float la String,dar fara nicio zecimala;
+
+Task 5
+    -elimianm primul rand din tabela de input;
+    -ne intereseaza doar numele si numarul totalt de pasi,deci vom aplica map (take 2) pe input;
+    -aplicam functia sortBy cu argumentele cmp_steps si inputul prelucrat;
+    -cmp_steps face o comparatie si intoarce LT pentru mai mic si GT pentru mai mare,iar in caz de egalitate comparam numele oamenilor cu cmp_people;
+    -cmp_people functioneaza dupa aceeasi logica;
+    -intoarcem rezultatul final;
+
+Task 6
+    -elimianm primul rand din tabel;
+    -mapam me input si salvam numele oamenilor;
+    -aplicam map tail pe input pentru a obtine valorile numerice;
+    -aplicam functiile get_first si get_last pe input pentru a obtine listele cu numarul de pasi pentru fiecare persoana pentru primele,respectiv ultimele 4h;
+    -aplicam operatia de insumare pe coloana si calculul mediei pentru cele 2 intervale;
+    -calculam diferenta intre cele 2 coloane,in valoare absoluta;
+    -transformam listele ce trebuie printate din [Float] in [String];
+    -rezultaul final va fi obtinut prin concatenarea doua cate doua,apoi a rezultatelor a 4 liste:cea cu numele oamenilor,media pe primele 4h,media pe ultimele 4h si diferenta dintre cele 2;
+
+Task 7
+    -primi un tabel si trebuie sa aplicam o functie pe fiecare element din el;
+    -folosim map(map f);primul map va actiona asupra fiecarui rand din tabel,iar al doilea asupra fiecarui element de pe rand;
+
+Task 8
+    -primim input un rand din tabela;extragem adresa de mail;
+    -extragem si valorile numerice pe care le convertim la int;
+    -facem suma pasilor zilnici(valorile numerice),iar in final o vom converti la string;
+    -afisam rezultatul final;
